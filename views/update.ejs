@@ -1,104 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
     <title>Document</title>
-</head>
-<body>
-    <form action="/product/updateUser/<%= id %>" method="post">
-        <input type="text" value="<%= FirstName %>"  name="FirstName"  placeholder="FirstName" />
-        <input type="text"  name="LastName"  placeholder="LastName" />
-        <input type="text"  name="Age"  placeholder="Age" />
-        <input type="text"  name="PassWord"  placeholder="PassWord" />
-        <input type="text"  name="City"  placeholder="City" />
-        <input type="text"  name="Email"  placeholder="Email" />
-        <input type="submit"  value="Validate"  />
- </form>
-
- <form
- action="/product/updateUser/<%= id %>" 
- method="post"
- class=" border border-secondary p-4 rounded mt-5"
->
- <h2 class="text-center">Add User</h2>
- <div class="mb-3">
-   <label for="FirstName" class="form-label">FirstName</label>
-   <input
-     type="text"
-     name="FirstName"
-     required
-     placeholder="FirstName"
-     class="form-control"
-     value="<%= FirstName %>"
-   />
- </div>
- <div class="mb-3">
-   <label for="LastName" class="form-label">LastName</label>
-   <input
-     type="text"
-     name="LastName"
-     required
-     placeholder="LastName"
-     class="form-control"
-     value="<%= LastName %>"
-   />
- </div>
- <div class="mb-3">
-   <label for="Age" class="form-label">Age</label>
-   <input
-     type="text"
-     name="Age"
-     placeholder="Age"
-     required
-     class="form-control"
-     value="<%= Age %>"
-   />
- </div>
- <div class="mb-3">
-   <label for="City" class="form-label">City</label>
-   <input
-     type="text"
-     name="City"
-     placeholder="City"
-     required
-     class="form-control"
-     value="<%= City %>"
-   />
- </div>
- <div class="mb-3">
-   <label for="Email" class="form-label">Email</label>
-   <input
-     type="email"
-     name="Email"
-     placeholder="Email"
-     required
-     class="form-control"
-     value="<%= Email %>"
-   />
- </div>
- <div class="mb-3">
-   <label for="exampleInputPassword1" class="form-label">Password</label>
-   <input
-     type="password"
-     name="PassWord"
-     placeholder="PassWord"
-     required
-     class="form-control"
-     id="exampleInputPassword1"
-     value="<%= PassWord %>"
-   />
- </div>
- <!-- <div class="mb-3 form-check">
+  </head>
+  <body class="container p-5">
+    <form
+      action="/product/updateUser/<%= id %>"
+      method="post"
+      class="border border-secondary p-4 rounded mt-5"
+    >
+      <h2 class="text-center">Add User</h2>
+      <div class="mb-3">
+        <label for="FirstName" class="form-label">FirstName</label>
+        <input
+          type="text"
+          name="FirstName"
+          required
+          placeholder="FirstName"
+          class="form-control"
+          value="<%= FirstName %>"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="LastName" class="form-label">LastName</label>
+        <input
+          type="text"
+          name="LastName"
+          required
+          placeholder="LastName"
+          class="form-control"
+          value="<%= LastName %>"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="Age" class="form-label">Age</label>
+        <input
+          type="text"
+          name="Age"
+          placeholder="Age"
+          required
+          class="form-control"
+          value="<%= Age %>"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="City" class="form-label">City</label>
+        <input
+          type="text"
+          name="City"
+          placeholder="City"
+          required
+          class="form-control"
+          value="<%= City %>"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="Email" class="form-label">Email</label>
+        <input
+          type="email"
+          name="Email"
+          placeholder="Email"
+          required
+          class="form-control"
+          value="<%= Email %>"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input
+          type="password"
+          name="PassWord"
+          placeholder="PassWord"
+          required
+          class="form-control"
+          id="exampleInputPassword1"
+          value="<%= PassWord %>"
+        />
+      </div>
+      <!-- <div class="mb-3 form-check">
    <input type="checkbox" class="form-check-input" id="exampleCheck1">
    <label class="form-check-label" for="exampleCheck1">Check me out</label>
  </div> -->
- <input
-   type="submit"
-   value="Validate" 
-   class="btn btn-primary d-flex justify-content-center mx-auto"
- />
-</form>
-</body>
+      <div class="d-flex  justify-content-center text-center mr-5">
+        <input
+          type="submit"
+          value="Validate"
+          class="btn btn-primary mx-2"
+        />
+        <a  href="/">
+          <input
+            type="button"
+            value="Discard"
+            class="btn btn-danger"
+        /></a>
+      </div>
+    </form>
+  </body>
 </html>
