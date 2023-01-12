@@ -1,0 +1,21 @@
+.cards{
+    display: grid;
+    grid-template-columns:repeat(3,1fr);
+}
+
+.card{
+    box-shadow: 5px 5px 5px black;
+            
+}
+
+span{
+    font-weight: bold;
+}
+
+
+@media (max-width:795px) {
+    .cards{
+        display: grid;
+        grid-template-columns:repeat(2,1fr);
+    }
+}

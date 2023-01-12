@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="/addUser.css">
+    <title>Document</title>
+  </head>
+  <body class="container">
+    <form
+      action="/product/addUser"
+      method="post"
+      class=" border border-secondary p-4 rounded mt-5"
+    >
+      <h2 class="text-center">Add User</h2>
+      <div class="mb-3">
+        <label for="FirstName" class="form-label">FirstName</label>
+        <input
+          type="text"
+          name="FirstName"
+          required
+          placeholder="FirstName"
+          class="form-control"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="LastName" class="form-label">LastName</label>
+        <input
+          type="text"
+          name="LastName"
+          required
+          placeholder="LastName"
+          class="form-control"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="Age" class="form-label">Age</label>
+        <input
+          type="text"
+          name="Age"
+          placeholder="Age"
+          required
+          class="form-control"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="City" class="form-label">City</label>
+        <input
+          type="text"
+          name="City"
+          placeholder="City"
+          required
+          class="form-control"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="Email" class="form-label">Email</label>
+        <input
+          type="email"
+          name="Email"
+          placeholder="Email"
+          required
+          class="form-control"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input
+          type="password"
+          name="PassWord"
+          placeholder="PassWord"
+          required
+          class="form-control"
+          id="exampleInputPassword1"
+        />
+      </div>
+      <!-- <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+      </div> -->
+      <input
+        type="submit"
+        value="Add User"
+        class="btn btn-primary d-flex justify-content-center mx-auto"
+      />
+    </form>
+
+    <div class="mt-5">
+      <a href="/product/sortedUsers"><button class="btn btn-success w-25 text-center " id="sort">SORT</button></a>
+      <div class=" cards">
+        <% for (var i = 0; i < users.length; i++) { %>
+        <div class="card m-3 card">
+          <img class="w-100" src="/image.jpeg" class="card-img-top" alt="..." />
+
+          <div class="card-body">
+            <h5 class="card-title"><%= users[i].FirstName.charAt(0).toUpperCase() + users[i].FirstName.slice(1) %></h5>
+            <div class="d-flex justify-content-between">
+              <p class="card-text"><span> Age :</span> <%= users[i].Age %></p>
+            <p class="card-text"><span> City : </span><%= users[i].Adresse.City %></p>
+            </div>
+
+            <div class="d-flex justify-content-around">
+              
+            <form class="d-block "
+            action="/product/deleteUser/<%= users[i]._id %>"
+            method="post"
+          >
+            <button class="btn btn-danger text-center " type="submit">Delete</button>
+          </form>
+          <a href="/product/updateUser/<%= users[i]._id %>"
+            ><button class="btn btn-success text-center ">Edit</button></a
+          >
+            </div>
+       
+          </div>
+        </div>
+        <% } %>
+      </ul>
+    </div>
+
+    <script defer>
+      const btn = document.getElementById("sort");
+      btn.addEventListener("click", () => {
+        console.log("clicked");
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", "/?message=sort"); // send a POST request to the '/send-message' route
+        xhr.send(); // send the message as a JSON object in the request body
+      });
+    </script>
+  </body>
+</html>
